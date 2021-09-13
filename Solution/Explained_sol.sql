@@ -15,7 +15,7 @@ SELECT description FROM crime_scene_report WHERE type='murder' AND date=20180115
 			-- 4919
 
 		SELECT * FROM person WHERE address_number=4919;
-			-- id 	  | name 			| license_id | address_number | address_street_name | ssn
+			-- id 	 | name 		   | license_id  | address_number | address_street_name | ssn
 			-- 14887 | Morty Schapiro  | 118009 	 | 4919 		  | Northwestern Dr 	| 111564949
 
 		SELECT transcript FROM interview WHERE person_id=14887;
@@ -61,7 +61,7 @@ SELECT description FROM crime_scene_report WHERE type='murder' AND date=20180115
 
 -- Facebook:
 SELECT * FROM facebook_event_checkin WHERE person_id in (28819, 67318);
-	-- person_id | event_id | event_name 				| date
+	-- person_id  | event_id | event_name 				| date
 	-- 67318 	  | 4719 	 | The Funky Grooves Tour   | 20180115		//day of the crime
 	-- 67318 	  | 1143 	 | SQL Symphony Concert 	| 20171206
 
@@ -75,25 +75,26 @@ SELECT * FROM interview WHERE person_id IN (28819, 67318);
 
 SELECT * FROM facebook_event_checkin WHERE event_name='SQL Symphony Concert' AND date LIKE '201712%' ORDER BY person_id
 -- ! I deleted those who attended the meeting less than 3 times !
-	-- person_id | event_id | event_name | date
-	-- 24556 | 1143 | SQL Symphony Concert | 20171207
-	-- 24556 | 1143 | SQL Symphony Concert | 20171221
-	-- 24556 | 1143 | SQL Symphony Concert | 20171224
-	-- 99716 | 1143 | SQL Symphony Concert | 20171206
-	-- 99716 | 1143 | SQL Symphony Concert | 20171212
-	-- 99716 | 1143 | SQL Symphony Concert | 20171229
+	-- person_id | event_id | event_name 		   | date
+	-- 24556     | 1143 	| SQL Symphony Concert | 20171207
+	-- 24556     | 1143 	| SQL Symphony Concert | 20171221
+	-- 24556     | 1143 	| SQL Symphony Concert | 20171224
+	-- 99716     | 1143 	| SQL Symphony Concert | 20171206
+	-- 99716     | 1143 	| SQL Symphony Concert | 20171212
+	-- 99716     | 1143 	| SQL Symphony Concert | 20171229
 
 SELECT * FROM person WHERE id IN (24556,99716);
-	-- id | name | license_id | address_number | address_street_name | ssn
-	-- 24556 | Bryan Pardo | 101191 | 703 | Machine Ln | 816663882
-	-- 99716 | Miranda Priestly | 202298 | 1883 | Golden Ave | 987756388
+	-- id    | name 			| license_id 	| address_number| address_street_name 	| ssn
+	-- 24556 | Bryan Pardo 		| 101191 		| 703 			| Machine Ln 			| 816663882
+	-- 99716 | Miranda Priestly | 202298		| 1883 			| Golden Ave 			| 987756388
 
 SELECT * FROM drivers_license WHERE id IN (101191,202298);
-	-- id | age | height | eye_color | hair_color | gender | plate_number | car_make | car_model
-	-- 202298 | 68 | 66 | green | red | female | 500123 | Tesla | Model S
+	-- id 		| age	| height | eye_color 	| hair_color 	| gender | plate_number | car_make	| car_model
+	-- 202298	| 68	| 66 	 | green 		| red 			| female | 500123 		| Tesla 	| Model S
 
 SELECT * FROM income WHERE ssn IN (987756388, 816663882);
-	-- ssn | annual_income
+	-- ssn 	     | annual_income
+  	-- 816663882 | 11000
 	-- 987756388 | 310000
 
 INSERT INTO solution VALUES (2, 'Miranda Priestly');
